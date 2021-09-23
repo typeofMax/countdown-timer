@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    const deadLine = '2021-09-25';
+    const deadLine = '2021-09-23';
 
     function getTimeRemaining(endTime) {
         const t = Date.parse(endTime) - Date.parse(new Date()),  // получаем оставшееся время в ms
