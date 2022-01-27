@@ -1,20 +1,18 @@
-window.addEventListener('DOMContentLoaded', () => {
-
-    const deadLine = '2021-09-23';
-
+function countDownTimer(blockClassName, deadLine) {
+        
     function getTimeRemaining(endTime) {
-        const t = Date.parse(endTime) - Date.parse(new Date()),  // получаем оставшееся время в ms
-              days = Math.floor(t / (1000 * 60 * 60 * 24)),
-              hours = Math.floor((t / (1000 * 60 * 60)) % 24),
-              minutes = Math.floor((t / 1000 / 60) % 60),
-              seconds = Math.floor((t / 1000) % 60);
+        const total = Date.parse(endTime) - Date.parse(new Date()),  // получаем оставшееся время в ms
+              days = Math.floor(total / (1000 * 60 * 60 * 24)),
+              hours = Math.floor((total / (1000 * 60 * 60)) % 24),
+              minutes = Math.floor((total / 1000 / 60) % 60),
+              seconds = Math.floor((total / 1000) % 60);
        
         return {
-            total: t,
+            total,
             days,
             hours,
             minutes,
-            seconds
+            seconds,
         };
     }
 
@@ -34,7 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
               seconds = timer.querySelector('#seconds'),
               getTimerId = setInterval(updateTimer, 1000);
 
-        updateTimer();
+        updateTimer(); /* Вызываем функцию, для того, что бы таймер включился сразу
+                        Иначе он включится, через время установленное в setInterval */
         
         function updateTimer() {
             const t = getTimeRemaining(endTime);
@@ -52,5 +51,10 @@ window.addEventListener('DOMContentLoaded', () => {
             }  
         }
     }
-    setClock('.timer', deadLine);
-});
+    setClock(blockClassName, deadLine);
+}
+
+export default countDownTimer;
+
+countDownTimer('.timer', '2022-09-23');
+
