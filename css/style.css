@@ -4,7 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Roboto, sans-serif
+    font-family: Roboto, sans-serif;
 }
 
 .promotion {
@@ -28,14 +28,14 @@
     padding: 0px 175px;
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
 }
 
 .promotion__timer .timer__block {
     width: 102px;
     height: 120px;
     background: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     font-size: 16px;
     font-weight: 300;
     text-align: center;
@@ -47,5 +47,5 @@
     margin-top: 20px;
     margin-bottom: 5px;
     font-size: 56px;
-    font-weight: 700
+    font-weight: 700;
 }
